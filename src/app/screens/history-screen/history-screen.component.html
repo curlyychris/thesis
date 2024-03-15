@@ -1,0 +1,13 @@
+<app-graph [titleText]="'Oxygen'" [type]="'line'" [xkey]="''" [ykey]="''" [sensorData]="[]"></app-graph>
+
+<div class="w-full max-w-md mx-auto mt-10">
+    <label class="block text-gray-700 text-lg font-semibold mb-2" for="date">
+      Select Date
+    </label>
+    <input class="shadow appearance-none border rounded 
+    w-full py-2 px-3 text-gray-700 leading-tight
+     focus:outline-none focus:shadow-outline" type="date" (change)="onDateChange($event)">
+</div>
+<div class="flex justify-center pt-40">
+  <h1 class="text-2xl text-gray-700 font-semibold">NO DATA AVAILABLE</h1>
+</div>

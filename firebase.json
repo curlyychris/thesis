@@ -1,0 +1,12 @@
+{
+  "database": {
+    "rules": "y"
+  },
+  "hosting": [
+    {
+      "target": "waterQualityAnalytics",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

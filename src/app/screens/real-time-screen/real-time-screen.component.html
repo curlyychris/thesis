@@ -1,0 +1,27 @@
+<div class="flex items-start flex-col">
+
+    <div class="flex items-center w-full justify-center flex-col gap-10">
+        
+            <div class="grid grid-cols-3 gap-2">   
+                <app-data-card [sensorName]="'Oxygen'" [imagePath]="'assets/images/oxygen_ic.svg'" [sensorData]="oxygenRealTimeData"></app-data-card>
+                <app-data-card [sensorName]="'Turbidity'" [imagePath]="'assets/images/turbidity_ic.svg'" [sensorData]="turbidityRealTimeData"></app-data-card>
+                <app-data-card [sensorName]="'pH'" [imagePath]="'assets/images/ph_ic.svg'" [sensorData]="phRealTimeData"></app-data-card>
+                <app-data-card [sensorName]="'EC'" [imagePath]="'assets/images/ec_ic.svg'" [sensorData]="ecRealTimeData"></app-data-card>
+                <app-data-card [sensorName]="'Temperature'" [imagePath]="'assets/images/temp_ic.svg'" [sensorData]="temperatureRealTimeData"></app-data-card>
+                <app-data-card [sensorName]="'ORP'" [imagePath]="'assets/images/orp_ic.svg'" [sensorData]="orpRealTimeData"></app-data-card>
+            </div>
+           
+            <div class="flex justify-center pb-10 ">
+                
+                <app-current-location-map [zoom]="7" [latitude]="34.6786" [longitude]="33.0413"></app-current-location-map>
+                <app-graph></app-graph>
+            </div>
+            
+    
+    
+    </div>
+
+  
+ 
+</div>
+

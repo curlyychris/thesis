@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "water-quality-app-1c0ba"
+  },
+  "targets": {
+    "water-quality-app-1c0ba": {
+      "hosting": {
+        "waterQualityAnalytics": [
+          "water-quality-app-1c0ba"
+        ]
+      }
+    }
+  }
+}

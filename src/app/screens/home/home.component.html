@@ -1,0 +1,12 @@
+<div class="flex justify-center pt-10">
+    <h1 class="text-4xl font-bold text-gray-800 pb-10">{{titleText}}</h1>
+</div>
+<div class="hidden sm:block sm:ml-6 pb-10">
+    <div class=" flex items-center justify-center w-full">
+        <button (click)="onRealTimeClick()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 rounded m-2 w-60">Real Time</button>
+        <button (click)="onHistoricalClick()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2  rounded m-2 w-60">History</button>
+    </div>
+</div>
+
+<app-real-time-screen *ngIf="isRealTimeScreenOn"></app-real-time-screen>
+<app-history-screen *ngIf="!isRealTimeScreenOn"></app-history-screen>

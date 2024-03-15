@@ -1,0 +1,6 @@
+
+<google-map  [center]="centre" [zoom]="mapZoom" [options]="options" [width]="'1000'">
+
+    <map-marker *ngFor="let markerPos of markerPositions" [position]="markerPos"></map-marker>
+
+</google-map>
