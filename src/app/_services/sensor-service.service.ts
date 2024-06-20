@@ -37,20 +37,20 @@ export class SensorServiceService {
     this.firebaseDatabase.onElementAdded('temperature', onDataFetched);
   }
 
-  async getSensorDataOfPeriod(sensorName: string, from: number, to: number): Promise<SensorDataDto[]> { 
+  getSensorDataOfPeriod(sensorName: string, from: number, to: number, onDataFetched: (data: SensorDataDto[]) => void) { 
     const database = getDatabase();
     const sensorRef = ref(database, sensorName);
     const sensorQuery = query(sensorRef, orderByChild('timestamp'), startAt(from), endAt(to));
 
-    let sensorData: SensorDataDto[] = [];
-  
-    await onValue(sensorQuery, snapshot => {
+    
+    onValue(sensorQuery, snapshot => {
+      let sensorData: SensorDataDto[] = [];
       snapshot.forEach(childSnapshot => {
         const data = childSnapshot.val() as SensorDataDto;
         sensorData.push(data);
       });
+      onDataFetched(sensorData);
     });
-    return sensorData;
   }
 }
 

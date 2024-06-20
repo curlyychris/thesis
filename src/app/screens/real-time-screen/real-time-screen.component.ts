@@ -2,8 +2,10 @@ import { Component } from '@angular/core';
 import { getAnalytics } from 'firebase/analytics';
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
+import { Coordinates } from 'src/app/_models/location';
 import { SensorDataDto } from 'src/app/_models/sensor-data-dto';
 import { FirebaseDatabaseService } from 'src/app/_services/firebase-database.service';
+import { LocationService } from 'src/app/_services/location.service';
 import { SensorServiceService } from 'src/app/_services/sensor-service.service';
 
 @Component({
@@ -40,7 +42,9 @@ export class RealTimeScreenComponent {
     this.turbidityRealTimeData= value;
   }
 
-  constructor(private sensorService: SensorServiceService) {
+
+
+  constructor(private sensorService: SensorServiceService,private locationService:LocationService) {
     this.setOxygenRealTimeValue = this.setOxygenRealTimeValue.bind(this);
     this.sensorService.onOxygenRealTimeValueAdded(this.setOxygenRealTimeValue);
 
@@ -57,7 +61,8 @@ export class RealTimeScreenComponent {
     this.sensorService.onPhRealTimeValueAdded(this.setPhRealTimeValue);
 
     this.setTemperatureRealTimeValue = this.setTemperatureRealTimeValue.bind(this);
-    this.sensorService.onTemperatureRealTimeValueAdded(this.setTemperatureRealTimeValue);  
+    this.sensorService.onTemperatureRealTimeValueAdded(this.setTemperatureRealTimeValue);
+    
   }
 
 }

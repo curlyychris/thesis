@@ -15,7 +15,6 @@ export class DataCardComponent implements OnChanges {
   unitAndValue: string = "";
 
   ngOnChanges(): void {
-    console.log("test");
     if (this.sensorData) {
       this.unitAndValue = this.sensorData.value?.toString() + " " + this.sensorData.unit;
     }

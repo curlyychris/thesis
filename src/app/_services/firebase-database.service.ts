@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { initializeApp } from 'firebase/app';
 import { firebaseConfig } from '../firebase/firebase';
-import { Database, getDatabase, limitToLast, onChildAdded, orderByKey, query, ref } from 'firebase/database';
+import { Database, getDatabase, limitToLast, onChildAdded,onChildChanged, orderByKey, query, ref } from 'firebase/database';
 import { Data } from '@angular/router';
 import { last } from 'rxjs';
 import { SensorDataDto } from '../_models/sensor-data-dto';
@@ -46,6 +46,8 @@ export class FirebaseDatabaseService {
       }
     });
    }
+
+   
 
    database()
    {

@@ -2,6 +2,6 @@ import { Time } from "@angular/common";
 
 export interface SensorTimestampedData
 {
-    timestamp: Time;
+    timestamp: string;
     sensorValue: number | null;
 }

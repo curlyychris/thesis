@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
-  isRealTimeScreenOn: boolean = false;
+  isRealTimeScreenOn: boolean = true;
   titleText: string = "Real Time Data";
 
 
